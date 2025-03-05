@@ -1,0 +1,26 @@
+module ptars {
+
+    /* tars2cpp --unjson file */
+    struct GMTest {
+        0 optional long uid;
+    };
+
+    struct GMParam {
+        0 optional long serverId;
+        1 optional long puid;
+        2 optional long leagueUid;
+        3 optional long name;
+        4 optional long oasisWarId;
+    };
+
+    // gm开启活动参数
+    struct GMActParam {
+        0 optional long serverId;
+        1 optional long beginTime;
+        2 optional long endTime;
+        3 optional long effectBeginTime;
+        4 optional long effectEndTime;
+        5 optional string extParam;
+        6 optional long extParam2;
+    };
+};
