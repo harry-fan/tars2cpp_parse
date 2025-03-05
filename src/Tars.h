@@ -1685,7 +1685,7 @@ public:
 	}
 
 	template<typename T>
-	void read(T& v, uint8_t tag, bool isRequire = true, typename detail::disable_if<detail::is_convertible<T*, TarsStructBase*>, void ***>::type dummy = 0, const std::string &fname = "")
+	void read(T& v, uint8_t tag, bool isRequire = true, const std::string &fname = "", typename detail::disable_if<detail::is_convertible<T*, TarsStructBase*>, void ***>::type dummy = 0)
 	{
 		Int32 n = 0;
 		read(n, tag, isRequire, fname);
@@ -1694,7 +1694,7 @@ public:
 
 	/// 读取结构
 	template<typename T>
-	void read(T& v, uint8_t tag, bool isRequire = true, typename detail::enable_if<detail::is_convertible<T*, TarsStructBase*>, void ***>::type dummy = 0, const std::string &fname = "")
+	void read(T& v, uint8_t tag, bool isRequire = true, const std::string &fname = "", typename detail::enable_if<detail::is_convertible<T*, TarsStructBase*>, void ***>::type dummy = 0)
 	{
 		uint8_t headType = 0, headTag = 0;
 		bool skipFlag = false;
